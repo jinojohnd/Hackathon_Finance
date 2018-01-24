@@ -16,18 +16,20 @@ nav {
   background: #ffffff;
 }
 
+.padding
+{
+  padding: 0 10px;
+  margin: 0 10px;
+}
 .link-3 {
   transition: 0.4s;
   color: #694ed6;
   font-size: 20px;
   text-decoration: none;
-  padding: 0 10px;
-  margin: 0 10px;
 }
 .link-3:hover {
   background-color: #ffffff;
   color:  #cb42ab;
-  padding: 15px 10px;
 }
 
 .homelink, .logoutlink {
@@ -49,4 +51,11 @@ nav {
 .nav-image{
 	width: 6.5pc;
 	margin-top: -25px;
+}
+
+.divider-vertical {
+height: 50px !important;
+margin: 0 9px;
+border-left: 2px solid #cb42ab;
+border-right: 2px solid #ffffff;
 }
