@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<div th:fragment="header-css">
+		<title>Finance APP</title>
+        <!-- this is header-css -->
+        <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
+</head>
+<body>
+<th:block th:fragment="header">
+    <!-- <nav class="navbar navbar-light navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" th:href="@{/home}">
+                    <img th:src="@{../../images/logo.jpg}" alt="memorynotfound logo"/>
+                </a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a th:href="@{/home}">Home</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <form th:action="@{/logout}" method="get" class="logout">
+							<button class="btn btn-info btn-md glyphicon glyphicon-log-out" name="logout"
+								type="Submit">Logout</button>
+						</form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+    
+    <nav id="nav-3">
+      <a class="glyphicon glyphicon-home homelink" th:href="@{/home}"></a>
+	  <a class="link-3" th:href="@{/home}">Create Request</a>
+	  <a class="link-3" th:href="@{/home}">Pending Items</a>
+	  <a class="glyphicon glyphicon-off logoutlink navbar-right" title="Logout" th:href="@{/logout}"></a>
+	</nav>
+    
+    
+</th:block>
+</body>
+</html>
