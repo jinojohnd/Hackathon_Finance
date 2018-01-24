@@ -33,17 +33,20 @@ nav {
 .homelink, .logoutlink {
   transition: 0.4s;
   color:  #694ed6;
-  font-size: 20px;
-  padding-left: 40px;
+  font-size: 25px;
 }
 
 
 .homelink:hover, .logoutlink:hover {
-	padding-left: 40px;
 	color:  #cb42ab;
 }
 
 
 .logoutlink {
 	padding-right: 40px;
+}
+
+.nav-image{
+	width: 6.5pc;
+	margin-top: -25px;
 }
