@@ -1,15 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<div th:fragment="header-css">
+<head th:fragment="header-css">
 		<title>Finance APP</title>
         <!-- this is header-css -->
         <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
         <link rel="stylesheet" type="text/css" th:href="@{/css/common.css}" />
+        <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </div>
 </head>
 <body>
 <th:block th:fragment="header">
