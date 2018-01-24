@@ -1,5 +1,3 @@
-CREATE SCHEMA `financedb`;
-
 use financedb;
 
 INSERT INTO tbl_Role VALUES (1,'ADMIN');
