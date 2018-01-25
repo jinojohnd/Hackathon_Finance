@@ -67,6 +67,30 @@ CREATE TABLE `tbl_user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+DROP TABLE IF EXISTS `tbl_employee`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_employee` (
+  `emp_id` int(15) NOT NULL AUTO_INCREMENT,
+  `emp_no` varchar(255) NOT NULL,
+  `active` varchar(1)NOT NULL,
+  `emp_name` varchar(255) NOT NULL,
+  `first_name` varchar(255),
+  `last_name` varchar(255),
+  `mobile` int(25),
+  `manager_id` int(11) NOT NULL,
+  `project_code` varchar(25),
+  `project_name` varchar(255),
+  `dob` date NOT NULL,
+  `passport_no` varchar(255),
+  `passport_issue_date` date,
+  `passport_expiry_date` date,
+  `tax_id` varchar(35), /*Refer to PAN*/
+  `uid` varchar(35), /*Refer to Aadhar*/  
+  PRIMARY KEY (`emp_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
