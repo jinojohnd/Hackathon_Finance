@@ -31,9 +31,15 @@ public class LoginController {
 	@RequestMapping(value="/registration", method = RequestMethod.GET)
 	public ModelAndView registration(){
 		ModelAndView modelAndView = new ModelAndView();
-		User user = new User();
-		modelAndView.addObject("user", user);
 		modelAndView.setViewName("registration");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value="home/create-forex", method = RequestMethod.GET)
+	public ModelAndView createForexReq(){
+		ModelAndView modelAndView = new ModelAndView();
+		getUserName(modelAndView);
+		modelAndView.setViewName("forex_request");
 		return modelAndView;
 	}
 	
@@ -62,12 +68,18 @@ public class LoginController {
 	public ModelAndView home()
 	{
 		ModelAndView modelAndView = new ModelAndView();
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		User user = userService.findUserByEmail(auth.getName());
-		modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
+		getUserName(modelAndView);
 		modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
 		modelAndView.setViewName("home");
 		return modelAndView;
+	}
+
+
+	private void getUserName(ModelAndView modelAndView) 
+	{
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		User user = userService.findUserByEmail(auth.getName());
+		modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 	}
 	
 

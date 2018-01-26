@@ -54,8 +54,38 @@ nav {
 }
 
 .divider-vertical {
-height: 50px !important;
-margin: 0 9px;
-border-left: 2px solid #cb42ab;
-border-right: 2px solid #ffffff;
+	height: 50px !important;
+	margin: 0 9px;
+	border-left: 2px solid #cb42ab;
+	border-right: 2px solid #ffffff;
+}
+
+.divider-horizontal {
+	border-top: 2px solid #cb42ab;
+	width:10pc;
+}
+
+.nav-tabs {
+    border-bottom: none !important;
+}
+
+.side-bar-nav{
+	padding-top: 5pc;
+	
+}
+
+.nav-tabs>li>a
+{
+	color: #694ed6;
+	border:none !important;
+	margin-top: 1px;
+}
+
+.nav-tabs>li>a:hover
+{
+	color: #cb42ab !important;
+	background-color: #ffffff !important;
+	width:10pc;
+	border:none !important;
+	margin-top: 1px;
 }

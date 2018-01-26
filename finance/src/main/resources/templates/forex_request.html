@@ -13,21 +13,24 @@
 </head>
 
 <body>
-	<div th:replace="fragments/header :: header"/>
-	<div class="container-fluid">		
-		<!-- <div class="panel-group"> -->
+<div th:replace="fragments/header :: header"/>	
+	<div class="container-fluid">
 		<div class="modal-body row-fluid">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<span th:utext="${userName}"></span>
-				</div>
-				<div class="panel-body">
-					Display a table here with some data
-				</div>
-				<p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+			<div class="col-md-2">
+				<div th:replace="fragments/header :: side-bar-forex"/>
 			</div>
-		</div>
-		<!-- </div>	 -->	
+			<div class="col-md-10">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<span th:utext="${userName}"></span>
+						</div>
+						<div class="panel-body">
+							Forex Request
+						</div>
+						<p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+					</div>
+			</div>
+		</div>		
 	</div>
 </body>
 </html>

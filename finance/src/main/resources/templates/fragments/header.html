@@ -39,15 +39,25 @@
     
     <nav id="nav-3">
       <a class="navbar-brand" th:href="@{/home}">
-      	<img th:src="@{images/flogo.png}" class="nav-image"/>
+      	<img th:src="@{/images/flogo.png}" class="nav-image"/>
       </a>
       <a class="glyphicon glyphicon-home homelink padding" th:href="@{/home}"></a>
-	  <a class="link-3 padding divider-vertical" th:href="@{/home}">Create Request</a>
+	  <a class="link-3 padding divider-vertical" th:href="@{/home/create-forex}">Forex Request</a>
 	  <a class="link-3 padding divider-vertical" th:href="@{/home}">Pending Items</a>
 	  <a class="glyphicon glyphicon-off logoutlink navbar-right" title="Logout" th:href="@{/logout}"></a>
 	</nav>
     
     
+</th:block>
+
+<th:block th:fragment="side-bar-forex">
+	<div class="side-bar-nav">
+	     <ul class="nav nav-tabs nav-stacked">
+	       <li><a href='#'>From Existing</a></li>
+	       <li class ="divider-horizontal"><a href='#'>Another Link 2</a></li>
+	       <li class ="divider-horizontal divider-botton-white"><a href='#'>Another Link 3</a></li>
+	     </ul>
+	</div>
 </th:block>
 </body>
 </html>
