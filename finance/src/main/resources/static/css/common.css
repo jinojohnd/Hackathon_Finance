@@ -157,3 +157,66 @@ input[type="password"] {
 .marginTop15px{
 	margin-top: 15px !important;
 }
+
+.plaintext {
+  display: block;
+  width: 100%;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  margin-bottom: 0;
+  line-height: 1.5;
+  box-shadow:none !important;
+  background-color: transparent;
+  border: 0px !important;
+}
+
+.width5pc
+{
+	width: 5pc;
+}
+
+.width10pc
+{
+	width: 10pc !important;
+}
+
+/* .btn-primary{
+	background-color: #694ed6 !important;
+	border: none !important;
+}
+
+.btn-primary:hover{
+	background-color: #ab97ff !important;
+	border: none !important;
+}
+
+.btn-default:hover{
+	background-color: #ab97ff !important;
+	color:white !important;
+} */
+
+.toggle-group>.btn-primary{
+	background-color: #694ed6 !important;
+	border: none !important;
+}
+
+.toggle-group>.btn-default{
+	background-color: white !important;
+	color:#cb42ab !important;
+}
+
+.toggle-group>.btn-default:hover, .btn-primary:hover{
+	background-color: #ab97ff !important;
+	color:white !important;
+}
+
+.btn {
+	background-color: #694ed6 !important;
+	border: none !important;
+	color:#ffffff !important;
+}
+
+.btn:hover {
+	background-color: #ab97ff !important;
+	border: none !important;
+}

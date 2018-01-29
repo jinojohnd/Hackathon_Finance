@@ -41,13 +41,3 @@ hr {
 .logo {
 	width: 8pc;
 }
-
-.btn {
-	background-color: #694ed6 !important;
-	border: none !important;
-}
-
-.btn:hover {
-	background-color: #ab97ff !important;
-	border: none !important;
-}

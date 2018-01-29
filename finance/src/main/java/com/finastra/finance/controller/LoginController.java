@@ -43,6 +43,15 @@ public class LoginController {
 		return modelAndView;
 	}
 	
+	@RequestMapping(value = "/home/forex_submission", method = RequestMethod.POST)
+	public ModelAndView createNewForexRequest(@Valid User user, BindingResult bindingResult) {
+		ModelAndView modelAndView = new ModelAndView();
+		getUserName(modelAndView);
+		modelAndView.setViewName("success");
+		modelAndView.addObject("successMessage","Sucessfully submitted the Forex Request Form.");
+		return modelAndView;
+	}
+	
 	@RequestMapping(value = "/registration", method = RequestMethod.POST)
 	public ModelAndView createNewUser(@Valid User user, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView();
