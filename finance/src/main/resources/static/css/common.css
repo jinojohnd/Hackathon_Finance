@@ -154,8 +154,8 @@ input[type="password"] {
     margin-left: 15px !important;
 }
 
-.marginTop15px{
-	margin-top: 15px !important;
+.marginBtm15px{
+	margin-bottom: 15px !important;
 }
 
 .plaintext {
@@ -195,19 +195,8 @@ input[type="password"] {
 	color:white !important;
 } */
 
-.toggle-group>.btn-primary{
-	background-color: #694ed6 !important;
-	border: none !important;
-}
-
-.toggle-group>.btn-default{
-	background-color: white !important;
-	color:#cb42ab !important;
-}
-
-.toggle-group>.btn-default:hover, .btn-primary:hover{
-	background-color: #ab97ff !important;
-	color:white !important;
+.toggle-group>.toggle-handle{
+	background-color: #ffffff !important;
 }
 
 .btn {
@@ -219,4 +208,10 @@ input[type="password"] {
 .btn:hover {
 	background-color: #ab97ff !important;
 	border: none !important;
+}
+
+.col-md-12>.table{
+	margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
 }
