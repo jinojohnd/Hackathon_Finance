@@ -28,13 +28,9 @@ public class Employee
 	@Column(name="active")
 	private String active;
 	
-	@NotEmpty(message = "*Please provide the First Name")
-	@Column(name="first_name")
-	private String first_name;
-	
-	@NotEmpty(message = "*Please provide the Last Number")
-	@Column(name="last_name")
-	private String last_name;
+	@NotEmpty(message = "*Please provide the Name")
+	@Column(name="emp_nm")
+	private String emp_nm;
 	
 	@Column(name="email")
 	@Email(message = "*Please provide a valid Email")
