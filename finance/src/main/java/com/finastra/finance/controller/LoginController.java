@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.finastra.finance.model.Forex;
 import com.finastra.finance.model.User;
 import com.finastra.finance.service.UserService;
 
@@ -40,15 +41,23 @@ public class LoginController {
 		ModelAndView modelAndView = new ModelAndView();
 		getUserName(modelAndView);
 		modelAndView.setViewName("forex_request");
+		modelAndView.addObject("forex", new Forex());
 		return modelAndView;
 	}
 	
-	@RequestMapping(value = "/home/forex_submission", method = RequestMethod.POST)
-	public ModelAndView createNewForexRequest(@Valid User user, BindingResult bindingResult) {
+	@RequestMapping(value = "/home/forex-submission", method = RequestMethod.POST)
+	public ModelAndView createNewForexRequest(@Valid Forex forex, BindingResult bindingResult) {
 		ModelAndView modelAndView = new ModelAndView();
 		getUserName(modelAndView);
-		modelAndView.setViewName("success");
-		modelAndView.addObject("successMessage","Sucessfully submitted the Forex Request Form.");
+		if (bindingResult.hasErrors()) 
+		{			
+			modelAndView.setViewName("forex_request");
+		} 
+		else
+		{
+			modelAndView.setViewName("success");
+			modelAndView.addObject("successMessage","Sucessfully submitted the Forex Request Form.");
+		}
 		return modelAndView;
 	}
 	
