@@ -6,9 +6,13 @@ body {
   font-family: Helvetica, Arial, Sans-Serif !important;
 }
 
+body>.container-fluid{
+	padding-top: 100px;
+}
+
 nav {
   margin-top: 1px;
-  padding: 15px;
+  padding: 15px 15px 0px 15px;
   text-align: left;
   font-family: Raleway;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
@@ -72,22 +76,23 @@ nav {
 }
 
 .side-bar-nav{
-	padding-top: 5pc;
-	
+	padding-bottom: 15px;
 }
 
-.nav-tabs>li>a
+.navbar-nav>li>a
 {
 	color: #cb42ab;
 	margin-top: 1px;
 	transition: 0.7s;
+	width: 11.5pc;
 }
 
-.nav-tabs>li>a:hover, .nav-tabs>li>a:focus
+.navbar-nav>li>a:hover, .navbar-nav>li>a:focus
 {
 	color: #ffffff !important;
 	border-radius: 1px !important;
 	background-color: #694ed6 !important;
+	width: 11.5pc;
 }
 
 hr {
@@ -220,4 +225,8 @@ input[type="password"] {
 	font-style: normal;
 	font-size: 12px;
 	color: #FF1C19;
+}
+
+.mainbody{
+	padding-top: 50px;
 }

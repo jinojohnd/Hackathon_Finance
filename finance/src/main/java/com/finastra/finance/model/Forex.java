@@ -1,20 +1,29 @@
 package com.finastra.finance.model;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
-@Entity
+@Entity(name="forex")
 @Table(name = "tbl_forex")
 public class Forex 
 {
@@ -42,7 +51,7 @@ public class Forex
 	
 	@Column(name = "mobile")
 	@NotNull(message = "*This field is required")
-	private int mobile;
+	private String mobile;
 	
 	@Column(name = "manager_nm")
 	@NotEmpty(message = "*This field is required")
@@ -75,9 +84,11 @@ public class Forex
 	@NotEmpty(message = "*This field is required")
 	private String client_nm;
 	
-	@Column(name = "dbo_dt")
+	@DateTimeFormat(pattern = "dd-MMM-yyyy")
+	@Temporal(TemporalType.DATE)
+	@Column(name = "dob_dt")
 	@NotNull(message = "*This field is required")
-	private Date dbo_dt;
+	private Date dob_dt;
 	
 	@Column(name = "add_line_1")
 	@NotEmpty(message = "*This field is required")
@@ -97,10 +108,14 @@ public class Forex
 	
 	@Column(name = "passport_iss_dt")
 	@NotNull(message = "*This field is required")
+	@DateTimeFormat(pattern = "dd-MMM-yyyy")
+	@Temporal(TemporalType.DATE)
 	private Date passport_iss_dt;
 	
 	@Column(name = "passport_exp_dt")
 	@NotNull(message = "*This field is required")
+	@DateTimeFormat(pattern = "dd-MMM-yyyy")
+	@Temporal(TemporalType.DATE)
 	private Date passport_exp_dt;
 	
 	@Column(name = "city")
@@ -127,12 +142,28 @@ public class Forex
 	@NotNull(message = "*This field is required")
 	private BigDecimal total_amt;
 	
-	@Column(name = "itinerary_id")
-	private int itinerary_id;
-	
 	@Column(name = "comments")
 	private String comments;
 	
+	@OneToMany(mappedBy = "forex", cascade = CascadeType.ALL)
+	List<Itinerary> itineraryLst = new ArrayList<Itinerary>();
+	
+	public Date getDob_dt() {
+		return dob_dt;
+	}
+
+	public void setDob_dt(Date dob_dt) {
+		this.dob_dt = dob_dt;
+	}
+
+	public List<Itinerary> getItineraryLst() {
+		return itineraryLst;
+	}
+
+	public void setItineraryLst(List<Itinerary> itineraryLst) {
+		this.itineraryLst = itineraryLst;
+	}
+
 	public int getForex_id() {
 		return forex_id;
 	}
@@ -173,11 +204,11 @@ public class Forex
 		this.email = email;
 	}
 
-	public int getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(int mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 
@@ -245,12 +276,12 @@ public class Forex
 		this.client_nm = client_nm;
 	}
 
-	public Date getDbo_dt() {
-		return dbo_dt;
+	public Date getdob_dt() {
+		return dob_dt;
 	}
 
-	public void setDbo_dt(Date dbo_dt) {
-		this.dbo_dt = dbo_dt;
+	public void setdob_dt(Date dob_dt) {
+		this.dob_dt = dob_dt;
 	}
 
 	public String getAdd_line_1() {
@@ -348,20 +379,18 @@ public class Forex
 	public void setTotal_amt(BigDecimal total_amt) {
 		this.total_amt = total_amt;
 	}
-
-	public int getItinerary_id() {
-		return itinerary_id;
-	}
-
-	public void setItinerary_id(int itinerary_id) {
-		this.itinerary_id = itinerary_id;
-	}
-
+	
 	public String getComments() {
 		return comments;
 	}
 
 	public void setComments(String comments) {
 		this.comments = comments;
+	}
+	
+	public void addItinerary(Itinerary itinerary)
+	{
+		itineraryLst.add(itinerary);
+		itinerary.setForex(this);
 	}
 }

@@ -38,7 +38,7 @@ public class Employee
 	private String email;
 	
 	@Column(name="mobile")
-	private int mobile;
+	private String mobile;
 	
 	@Column(name="manager_id")
 	private int manager_id;
