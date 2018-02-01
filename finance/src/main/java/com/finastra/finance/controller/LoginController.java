@@ -1,6 +1,5 @@
 package com.finastra.finance.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -62,8 +61,7 @@ public class LoginController {
 			modelAndView.setViewName("forex_request");
 		} 
 		else
-		{
-			
+		{			
 			forex.addItinerary(itinerary);
 			forexService.save(forex);
 			modelAndView.setViewName("success");
@@ -102,7 +100,6 @@ public class LoginController {
 		modelAndView.setViewName("home");
 		return modelAndView;
 	}
-
 
 	private void getUserName(ModelAndView modelAndView) 
 	{

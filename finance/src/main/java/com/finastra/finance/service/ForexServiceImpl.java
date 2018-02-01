@@ -1,5 +1,7 @@
 package com.finastra.finance.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,12 @@ public class ForexServiceImpl implements ForexService
 	public void save(Forex forex) 
 	{
 		forexRepository.save(forex);		
+	}
+
+	@Override
+	public List<Forex> getAllForexItemsByUser(String email) 
+	{
+		return forexRepository.findAllByUserId(email);
 	}
 
 }

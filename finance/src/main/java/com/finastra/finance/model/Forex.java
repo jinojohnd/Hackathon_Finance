@@ -144,10 +144,61 @@ public class Forex
 	
 	@Column(name = "comments")
 	private String comments;
-	
+		
 	@OneToMany(mappedBy = "forex", cascade = CascadeType.ALL)
 	List<Itinerary> itineraryLst = new ArrayList<Itinerary>();
 	
+	public Forex(int forex_id, String emp_type, String emp_nm, String mother_nm, String email, String mobile,
+			String manager_nm, int forex_card, String purpose_of_trip, String billable, String proj_code,
+			String proj_nm, String opp_num, String client_nm, Date dob_dt, String add_line_1, String add_line_2,
+			String add_line_3, String passport_num, Date passport_iss_dt, Date passport_exp_dt, String city, String uid,
+			String request_type, BigDecimal amt_in_cash, BigDecimal amt_on_card, BigDecimal total_amt, String comments,
+			List<Itinerary> itineraryLst) {
+		super();
+		this.forex_id = forex_id;
+		this.emp_type = emp_type;
+		this.emp_nm = emp_nm;
+		this.mother_nm = mother_nm;
+		this.email = email;
+		this.mobile = mobile;
+		this.manager_nm = manager_nm;
+		this.forex_card = forex_card;
+		this.purpose_of_trip = purpose_of_trip;
+		this.billable = billable;
+		this.proj_code = proj_code;
+		this.proj_nm = proj_nm;
+		this.opp_num = opp_num;
+		this.client_nm = client_nm;
+		this.dob_dt = dob_dt;
+		this.add_line_1 = add_line_1;
+		this.add_line_2 = add_line_2;
+		this.add_line_3 = add_line_3;
+		this.passport_num = passport_num;
+		this.passport_iss_dt = passport_iss_dt;
+		this.passport_exp_dt = passport_exp_dt;
+		this.city = city;
+		this.uid = uid;
+		this.request_type = request_type;
+		this.amt_in_cash = amt_in_cash;
+		this.amt_on_card = amt_on_card;
+		this.total_amt = total_amt;
+		this.comments = comments;
+		this.itineraryLst = itineraryLst;
+	}
+
+	public Forex() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Forex(String emp_type, String emp_nm, String manager_nm, BigDecimal total_amt) {
+		super();
+		this.emp_type = emp_type;
+		this.emp_nm = emp_nm;
+		this.manager_nm = manager_nm;
+		this.total_amt = total_amt;
+	}
+
 	public Date getDob_dt() {
 		return dob_dt;
 	}

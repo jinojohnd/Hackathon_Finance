@@ -3,13 +3,10 @@
 	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<!-- <title>Finance APP</title>
-	<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-  	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/datatable/dataTables.min.css}" />	
   	<div th:replace="fragments/header :: header-css"/>
+	<script th:src="@{/js/datatable/datatable.js}"></script>
+	<script th:src="@{/js/datatable/dataTables.min.js}"></script>
 </head>
 
 <body>
@@ -17,17 +14,40 @@
 	<div class="container-fluid">		
 		<!-- <div class="panel-group"> -->
 		<div class="modal-body row-fluid">
-			<div class="panel panel-primary">
-				<div class="panel-heading">
-					<span th:utext="${userName}"></span>
+			<div class="col-md-12">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span th:utext="${userName}"></span>
+					</div>
+					<div class="panel-body">
+						<div class="col-md-12">
+							<h1>Forex List</h1>
+							<table id="forexTable" class="display table">
+						      
+						       <!-- Header Table -->
+						       <thead>
+						            <tr>
+						                <th class="tHead">Name</th>
+										<th class="tHead">Type</th>
+						                <th class="tHead">Manager Name</th>
+						                <th class="tHead">Total Amount</th>
+						            </tr>
+						        </thead>
+						        <!-- Footer Table -->
+						        <tfoot>
+						            <tr>
+						                <th class="tHead">Name</th>
+										<th class="tHead">Type</th>
+						                <th class="tHead">Manager Name</th>
+						                <th class="tHead">Total Amount</th>
+						            </tr>
+						        </tfoot>
+						    </table>
+						</div>
+					</div>
 				</div>
-				<div class="panel-body">
-					Display a table here with some data
-				</div>
-				<p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
 			</div>
-		</div>
-		<!-- </div>	 -->	
+		</div>	
 	</div>
 </body>
 </html>
